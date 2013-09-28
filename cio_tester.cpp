@@ -12,11 +12,18 @@ int main()
     char name    [20] = "";
     char phone   [15] = ""; 
     char address [20] = "";
-    int  position     = 0;
-    int  key          = 0;
-    int  r            = console.getRows()-1;
-    int  c            = console.getCols()-1;
     
+    /*Bug*/
+    int  position     = 0;
+    /*this variable holds the starting position for which edit box to go in when  */
+    /*the program starts.                                                         */
+    /*whichever edit box that is, in matrix the program will terminate incorrectly*/
+    /*if that box is edited at all. i am looking into this but just be aware of   */
+    /*this when testing your program.                                             */
+    
+    int  key          = 0;
+    int  r            = console.getRows()-1;;
+    int  c            = console.getCols()-1;;
     bool running = true;
     while (running)
     /*
@@ -36,6 +43,7 @@ int main()
         console.display("------", r-3, c-6);
         console.display("|Exit|", r-2, c-6);
         console.display("------", r-1, c-6);
+
         console.display(name, 2, 11, 10);
         console.display(phone, 4, 11, 10);
         console.display(address, 6, 11, 10);
@@ -56,7 +64,7 @@ int main()
             key = console.edit("Exit - test read-only", r-2, c-5, 4, 21, (int*)0, (int*)0, false, true);
             break;
         } // end of switch(position)
-
+        
         switch(key)
         {
         case UP:
@@ -73,7 +81,10 @@ int main()
             else if (position == 3)
                 running = false;
             break;
+        default:
+            position = 0;
         } // end of switch(key)
+
     } // end of while(running)
 
     return 0;
