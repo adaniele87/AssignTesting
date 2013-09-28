@@ -45,6 +45,7 @@ int main()
                 position--;
             break;
         case DOWN:
+        case ENTER:
             if (position < 2)
                 position++;
             break;
