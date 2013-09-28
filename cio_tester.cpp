@@ -11,19 +11,19 @@ int main()
     int  position     = 0;
     int  key          = 0;
 
-    con.display("Small Tester for Assignment 1", 0, 0);
-    con.display(author, 0, con.getCols()-1-bio::strlen(author));
+    console.display("Small Tester for Assignment 1", 0, 0);
+    console.display(author, 0, con.getCols()-1-bio::strlen(author));
 
-    con.display("Name:    ", 2, 2);
-    con.display("Phone:   ", 4, 2);
-    con.display("Address: ", 6, 2);
+    console.display("Name:    ", 2, 2);
+    console.display("Phone:   ", 4, 2);
+    console.display("Address: ", 6, 2);
 
     bool running = true;
     while (running)
     {
-        con.display(name, 2, 11, 10);
-        con.display(phone, 4, 11, 10);
-        con.display(address, 6, 11, 10);
+        console.display(name, 2, 11, 10);
+        console.display(phone, 4, 11, 10);
+        console.display(address, 6, 11, 10);
 
         switch (position)
         {
