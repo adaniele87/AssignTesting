@@ -14,12 +14,15 @@ int main()
     char address [20] = "";
     
     /*Bug*/
-    int  position     = 0;
+    int  position     = 3;
     /*this variable holds the starting position for which edit box to go in when  */
     /*the program starts.                                                         */
     /*whichever edit box that is, in matrix the program will terminate incorrectly*/
     /*if that box is edited at all. i am looking into this but just be aware of   */
     /*this when testing your program.                                             */
+
+    /*TEMP solution: start inside the read-only exit box, ugly but allows testing */
+    /*               in all fields.                                               */
     
     int  key          = 0;
     int  r            = console.getRows()-1;;
