@@ -1,13 +1,19 @@
 /*********************************************************/
-/* Simple Test Main                                      */
-/* by: Andrew Daniele                                    */
+/* Console Input Output Library                     R0.1 */
 /*                                                       */
-/* switch between text editor and form by commenting out */
-/* one or the other of their respective defines          */
+/* Andrew Daniele                  adaniele1@myseneca.ca */
+/* September 30, 2013                                    */
+/* cio_tester.cpp                                        */
+/*                                                       */
+/* Adds edit and display functionality to the Console    */
+/* Input Output library by creating class 'Console',     */
+/* derived publicly from BConsole.                       */
 /*********************************************************/
 
-//#define TEXTEDITOR
-#define FORM
+
+// leave the mode you want, uncommented, and the other, commented
+#define TEXTEDITOR
+//#define FORM
 
 #if defined TEXTEDITOR && defined FORM
     #undef TEXTEDITOR
@@ -17,17 +23,16 @@
 #include "console.h"
 
 using namespace cio;
-
 int main()
 {
 #ifdef TEXTEDITOR //text editor mode
     char title   [30] = "Small Tester for Assignment 1";
     char author  [19] = "by: Andrew Daniele";
-    char line1   [80] = {'\0'};
-    char line2   [80] = {'\0'};
-    char line3   [80] = {'\0'};
-    char line4   [80] = {'\0'};
-    char line5   [80] = {'\0'};
+    char line1   [79] = {'\0'};
+    char line2   [79] = {'\0'};
+    char line3   [79] = {'\0'};
+    char line4   [79] = {'\0'};
+    char line5   [79] = {'\0'};
     int  c            = console.getCols()-1;
     int  curPos       = 0;
     int  fieldLength  = c;
@@ -48,19 +53,19 @@ int main()
         switch (line)
         {
         case 1:
-            key = console.edit(line1, 1, 0, fieldLength, 79, &strOffset, &curPos, true);
+            key = console.edit(line1, 1, 0, fieldLength, 78, &strOffset, &curPos, true);
             break;
         case 2:
-            key = console.edit(line2, 2, 0, fieldLength, 79, &strOffset, &curPos, true);
+            key = console.edit(line2, 2, 0, fieldLength, 78, &strOffset, &curPos, true);
             break;
         case 3:
-            key = console.edit(line3, 3, 0, fieldLength, 79, &strOffset, &curPos, true);
+            key = console.edit(line3, 3, 0, fieldLength, 78, &strOffset, &curPos, true);
             break;
         case 4:
-            key = console.edit(line4, 4, 0, fieldLength, 79, &strOffset, &curPos, true);
+            key = console.edit(line4, 4, 0, fieldLength, 78, &strOffset, &curPos, true);
             break;
         case 5:
-            key = console.edit(line5, 5, 0, fieldLength, 79, &strOffset, &curPos, true);
+            key = console.edit(line5, 5, 0, fieldLength, 78, &strOffset, &curPos, true);
             break;
         case 6:
             key = console.edit("Exit - test read-only", r-2, c-5, 4, 21, (int*)0, (int*)0, false, true);
